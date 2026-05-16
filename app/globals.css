@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  
+  /* Brand Colors */
+  --deep-green: #13532E;
+  --warm-beige: #EEE6D6;
+  --vibrant-orange: #FC7301;
+  --neutral-white: #FFFFFF;
+  --neutral-black: #000000;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-lato);
+  --font-headline: var(--font-comfortaa);
+  
+  /* Brand Color System */
+  --color-deep-green: var(--deep-green);
+  --color-warm-beige: var(--warm-beige);
+  --color-vibrant-orange: var(--vibrant-orange);
+  --color-neutral-white: var(--neutral-white);
+  --color-neutral-black: var(--neutral-black);
+  
+  /* Custom color utilities */
+  --color-primary: var(--deep-green);
+  --color-secondary: var(--warm-beige);
+  --color-accent: var(--vibrant-orange);
+}
+
+.font-headline {
+  font-family: var(--font-comfortaa), cursive;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-lato), -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Enhanced formatting for legal documents */
+.formatted-content {
+  line-height: 1.7;
+}
+
+.formatted-content h1 {
+  @apply text-3xl font-bold text-primary mb-8 mt-12 first:mt-0;
+}
+
+.formatted-content h2 {
+  @apply text-2xl font-semibold text-primary mb-6 mt-12 border-b border-gray-200 pb-3;
+}
+
+.formatted-content h3 {
+  @apply text-xl font-semibold text-primary mb-4 mt-8;
+}
+
+.formatted-content h4 {
+  @apply text-lg font-semibold text-primary mb-3 mt-6;
+}
+
+.formatted-content p {
+  @apply text-gray-700 mb-6 leading-relaxed;
+}
+
+.formatted-content ul, .formatted-content ol {
+  @apply mb-6 space-y-2;
+}
+
+.formatted-content li {
+  @apply text-gray-700 leading-relaxed;
+}
+
+.formatted-content ul li {
+  @apply relative pl-6;
+}
+
+.formatted-content ul li::before {
+  @apply absolute left-0 top-2 w-2 h-2 bg-accent rounded-full;
+  content: '';
+}
+
+.formatted-content ol li {
+  @apply relative pl-6;
+}
+
+.formatted-content a {
+  @apply text-accent hover:text-accent/80 underline transition-colors duration-200;
+}
+
+.formatted-content strong {
+  @apply text-primary font-semibold;
+}
+
+.formatted-content em {
+  @apply italic text-gray-600;
+}
+
+.formatted-content blockquote {
+  @apply border-l-4 border-accent bg-secondary/10 py-4 px-6 rounded-r-lg mb-6 italic;
+}
+
+.formatted-content code {
+  @apply bg-gray-100 px-2 py-1 rounded text-sm font-mono;
+}
+
+.formatted-content pre {
+  @apply bg-gray-100 p-4 rounded-lg overflow-x-auto mb-6;
+}
+
+.formatted-content table {
+  @apply w-full border-collapse border border-gray-300 mb-6;
+}
+
+.formatted-content th, .formatted-content td {
+  @apply border border-gray-300 px-4 py-2 text-left;
+}
+
+.formatted-content th {
+  @apply bg-secondary/20 font-semibold text-primary;
+}
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+}
